@@ -12,3 +12,4 @@ C:\Users\toshiki.sumiya\Documents\NumberGuessingGame\obj\Debug\net8.0\refint\Num
 C:\Users\toshiki.sumiya\Documents\NumberGuessingGame\obj\Debug\net8.0\NumberGuessingGame.pdb
 C:\Users\toshiki.sumiya\Documents\NumberGuessingGame\obj\Debug\net8.0\NumberGuessingGame.genruntimeconfig.cache
 C:\Users\toshiki.sumiya\Documents\NumberGuessingGame\obj\Debug\net8.0\ref\NumberGuessingGame.dll
+C:\Users\toshiki.sumiya\Documents\NumberGuessingGame\obj\Debug\net8.0\NumberGuessingGame.sourcelink.json

@@ -19,16 +19,49 @@ if (!IsInputLevelCorrect(inputLevel))
     Console.WriteLine("1～3の数値を入力してください");
 }
 
-// switch (inputLevel)
-// {
-    
-//     default:
-// }
+switch (inputLevel)
+{
+    case "1":
+        Console.WriteLine($"Great! You have selected the Easy difficulty level.");
+        break;
+    case "2":
+        Console.WriteLine($"Great! You have selected the Medium difficulty level.");
+        break;
+    case "3":
+        Console.WriteLine($"Great! You have selected the Hard difficulty level.");
+        break;
+    default:
+        Console.WriteLine("Let's start the game!");
+        break;
+}
 
-bool IsInputLevelCorrect(string inputLevel){
-    if (!Int32.TryParse(inputLevel,out _)) return false;
+var random = new Random();
+var randomNumber = random.Next(1, 101);
+
+while (true)
+{
+    Console.Write("Enter your guess: ");
+    var inputGuess = Console.ReadLine();
+
+    if (string.IsNullOrWhiteSpace(inputGuess)) return;
+    if (!Int32.TryParse(inputLevel, out _))
+    {
+        Console.WriteLine("数値を入力してください");
+    }
+
+    if (Int32.Parse(inputGuess) != randomNumber)
+    {
+    }
+}
+
+
+
+// レベル入力チェック
+bool IsInputLevelCorrect(string inputLevel)
+{
+    if (!Int32.TryParse(inputLevel, out _)) return false;
 
     var level = Int32.Parse(inputLevel);
-    if(level < 1 || level > 3) return false;
+    if (level < 1 || level > 3) return false;
     return true;
 }
