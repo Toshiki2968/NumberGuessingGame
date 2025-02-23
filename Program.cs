@@ -38,8 +38,26 @@ switch (inputLevel)
 var random = new Random();
 var randomNumber = random.Next(1, 101);
 
+var attemptsCount = 0;
 while (true)
 {
+    attemptsCount++;
+
+    switch (inputLevel)
+    {
+        case "1":
+            if (attemptsCount > 10) return;
+            break;
+        case "2":
+            if (attemptsCount > 5) return;
+            break;
+        case "3":
+            if (attemptsCount > 3) return;
+            break;
+        default:
+            break;
+    }
+
     Console.Write("Enter your guess: ");
     var inputGuess = Console.ReadLine();
 
@@ -48,10 +66,20 @@ while (true)
     {
         Console.WriteLine("数値を入力してください");
     }
-
-    if (Int32.Parse(inputGuess) != randomNumber)
+    var guess = Int32.Parse(inputGuess);
+    if (guess == randomNumber)
     {
+        Console.WriteLine($"Congratulations! You guessed the correct number in {attemptsCount} attempts.");
+        return;
     }
+    if (guess > randomNumber)
+    {
+        Console.WriteLine($"Incorrect! The number is less than {guess}.");
+        continue;
+    }
+
+    Console.WriteLine($"Incorrect! The number is greater than {guess}.");
+    continue;
 }
 
 
