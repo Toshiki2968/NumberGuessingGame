@@ -38,6 +38,9 @@
     var random = new Random();
     var randomNumber = random.Next(1, 101);
 
+    var sw = new System.Diagnostics.Stopwatch();
+    sw.Start();
+
     var attemptsCount = 0;
     while (true)
     {
@@ -69,7 +72,10 @@
         var guess = Int32.Parse(inputGuess);
         if (guess == randomNumber)
         {
+            sw.Stop();
             Console.WriteLine($"Congratulations! You guessed the correct number in {attemptsCount} attempts.");
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine($"　{ts}");
             break;
         }
         if (guess > randomNumber)
